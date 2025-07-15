@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div>
       <Navbar />
-      <div className="min-h-[85vh] mt-28">
+      <div className="min-h-[82vh] mt-28">
         <Outlet />
       </div>
       <Footer />
