@@ -3,13 +3,13 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const libraryApi = createApi({
   reducerPath: "libraryApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api",
+    baseUrl: "https://ph-l2-assignment-3-dloc.onrender.com/api",
     prepareHeaders: (headers) => {
       headers.set("Content-Type", "application/json");
       return headers;
     },
   }),
-  tagTypes: ["Book"],
+  tagTypes: ["Book", "Borrow"],
   endpoints: (builder) => ({
     getAllBooks: builder.query({
       query: () => "/books",
@@ -47,7 +47,21 @@ export const libraryApi = createApi({
         url: `/books/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["Book"],
+      invalidatesTags: ["Book", "Borrow"],
+    }),
+
+    borrowBook: builder.mutation({
+      query: (data) => ({
+        url: `/borrow`,
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["Book", "Borrow"],
+    }),
+
+    getBorrowSummary: builder.query({
+      query: () => "/borrow",
+      providesTags: ["Borrow"],
     }),
   }),
 });
@@ -58,4 +72,6 @@ export const {
   useCreateBookMutation,
   useUpdateBookMutation,
   useDeleteBookMutation,
+  useBorrowBookMutation,
+  useGetBorrowSummaryQuery,
 } = libraryApi;
