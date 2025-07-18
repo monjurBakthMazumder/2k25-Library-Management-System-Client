@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const libraryApi = createApi({
   reducerPath: "libraryApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://ph-l2-assignment-3-dloc.onrender.com/api",
+    baseUrl: "https://ph-l2-assignment-3.vercel.app//api",
     prepareHeaders: (headers) => {
       headers.set("Content-Type", "application/json");
       return headers;
