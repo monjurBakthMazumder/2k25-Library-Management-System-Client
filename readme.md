@@ -34,7 +34,7 @@ A fully featured RESTful API built for efficiently managing books and borrow rec
 ### Live Server
 
 - 🔗 **Client**: [2k25 Library Management System Client](https://ph-l2-assignment-4.vercel.app/)
-- 🔗 **Server**: [2k25 Library Management System Server](https://ph-l2-assignment-3-dloc.onrender.com/)
+- 🔗 **Server**: [2k25 Library Management System Server](https://ph-l2-assignment-3.vercel.app/)
 
 ---
 
